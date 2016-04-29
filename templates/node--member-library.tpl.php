@@ -152,9 +152,11 @@ hide($content['links']);
             foreach($contact_collection as $contact):
     ?>
 	<div class="col-md-4 col-xs-12 col-sm-6 library-contact">
-	  <h4><?php echo $contact['field_contact_name'][0]['#markup']; ?></h4>
+	  <h4 class="contact-name"><?php echo $contact['field_contact_name'][0]['#markup']; ?></h4>
+	  <?php if($contact['field_title'][0]['#markup']): ?>
+	      <span class="contact-title"><?php echo $contact['field_title'][0]['#markup']; ?></span>
+	    <?php endif; ?>
 	  <ul>
-	    <li><?php echo $contact['field_title'][0]['#markup']; ?></li>
 	    <li><span>Email:</span> <?php echo $contact['field_email'][0]['#markup']; ?></li>
 	    <li><span>Phone:</span> <?php echo $contact['field_phone'][0]['#markup']; ?></li>
 	    <li><span>Contact Type:</span> <?php echo $contact['field_contact_type'][0]['#markup']; ?></li>

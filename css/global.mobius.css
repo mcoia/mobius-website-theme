@@ -183,6 +183,14 @@ table.views-table caption {
 /* contact table styles */
 }
 
+h4.contact-name {
+  font-size: 1.25em;
+  margin-bottom: .3em;
+}
+.contact-title {
+  font-style: italic;
+}
+
 .tb-megamenu .mega-nav .mega-group > .mega-group-title, .tb-megamenu .dropdown-menu .mega-nav .mega-group > .mega-group-title, .tb-megamenu .dropdown-menu .active .mega-nav .mega-group > .mega-group-title {
     background: inherit;
     font-weight: bold;
