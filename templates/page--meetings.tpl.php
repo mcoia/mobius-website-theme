@@ -3,6 +3,16 @@
  * @file
  * Adaptivetheme implementation to display a single Drupal page.
  *
+ * ###  Full Width Wrappers  ###
+ *
+ * This page template that has 100% width wrappers, which effectively
+ * divide the page up into sections to you can style with full width
+ * backgrounds. AT Commerce uses markup similar to this to achieve
+ * its style - its worth checking out to see how I did this.
+ *
+ * To use copy this to your subtheme and rename it page.tpl.php,
+ * or enable this in theme settings under "Site Tweaks".
+ *
  * Available variables:
  *
  * Adaptivetheme supplied variables:
@@ -91,78 +101,110 @@
  * @see adaptivetheme_process_page()
  */
 ?>
-<?php drupal_add_js('toggleMeetingFiles()',array('type' => 'inline', 'scope' => 'footer', 'weight' => 5)); ?>
+<?php
+drupal_add_js('toggleMeetingFiles()',array('type' => 'inline', 'scope' => 'footer', 'weight' => 5));
+?>
 <div id="page-wrapper">
-  <div id="page" class="container <?php print $classes; ?>">
+  <div id="page" class="<?php print $classes; ?>">
 
-    <!-- !Leaderboard Region -->
-    <?php print render($page['leaderboard']); ?>
-    <?php if ($site_logo): ?>
-            <div id="logo">
-              <?php print $site_logo; ?>
-            </div>
-          <?php endif; ?>
-
-    <header<?php print $header_attributes; ?>>
-
-      <?php if ($site_name || $site_slogan): ?>
-        <!-- !Branding -->
-        <div<?php print $branding_attributes; ?>>
-
-          <?php if ($site_name || $site_slogan): ?>
-            <!-- !Site name and Slogan -->
-            <div<?php print $hgroup_attributes; ?>>
-
-              <?php if ($site_name): ?>
-                <h1<?php print $site_name_attributes; ?>><?php print $site_name; ?></h1>
-              <?php endif; ?>
-
-              <?php if ($site_slogan): ?>
-                <h2<?php print $site_slogan_attributes; ?>><?php print $site_slogan; ?></h2>
-              <?php endif; ?>
-
-            </div>
-          <?php endif; ?>
-
+    <?php if($page['leaderboard']): ?>
+      <div id="leaderboard-wrapper">
+        <div class="container clearfix">
+          <?php print render($page['leaderboard']); ?>
         </div>
-      <?php endif; ?>
+      </div>
+    <?php endif; ?>
 
-      <!-- !Header Region -->
-      <?php print render($page['header']); ?>
+    <div id="header-wrapper">
+      <div class="container clearfix">
+        <header<?php print $header_attributes; ?>>
 
-    </header>
+          <?php if ($site_logo || $site_name || $site_slogan): ?>
+            <!-- start: Branding -->
+            <div<?php print $branding_attributes; ?>>
 
-    <!-- !Navigation -->
-    <?php print render($page['menu_bar']); ?>
-    <?php if ($primary_navigation): print $primary_navigation; endif; ?>
-    <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
+              <?php if ($site_logo): ?>
+                <div id="logo">
+                  <?php print $site_logo; ?>
+                </div>
+              <?php endif; ?>
 
-    <!-- !Breadcrumbs -->
+              <?php if ($site_name || $site_slogan): ?>
+                <!-- start: Site name and Slogan -->
+                <div<?php print $hgroup_attributes; ?>>
 
-    <?php print render($page['breadcrumb']); ?>
-    <!-- <?php if ($breadcrumb): print $breadcrumb; endif; ?> -->
+                  <?php if ($site_name): ?>
+                    <h1<?php print $site_name_attributes; ?>><?php print $site_name; ?></h1>
+                  <?php endif; ?>
 
-    <!-- !Messages and Help -->
-    <?php print $messages; ?>
-    <?php print render($page['help']); ?>
+                  <?php if ($site_slogan): ?>
+                    <h2<?php print $site_slogan_attributes; ?>><?php print $site_slogan; ?></h2>
+                  <?php endif; ?>
 
-    <!-- !Secondary Content Region -->
-    <?php print render($page['secondary_content']); ?>
+                </div><!-- /end #name-and-slogan -->
+              <?php endif; ?>
 
-    <div id="columns" class="columns clearfix">
-      <main id="content-column" class="content-column" role="main">
-        <div class="content-inner">
 
-          <!-- !Highlighted region -->
+            </div><!-- /end #branding -->
+          <?php endif; ?>
+
+        <?php print render($page['header']); ?>
+
+        </header>
+      </div>
+    </div>
+
+    <?php if ($page['menu_bar'] || $primary_navigation || $secondary_navigation): ?>
+      <div id="nav-wrapper">
+        <div class="container clearfix">
+          <?php print render($page['menu_bar']); ?>
+          <?php if ($primary_navigation): print $primary_navigation; endif; ?>
+          <?php if ($secondary_navigation): print $secondary_navigation; endif; ?>
+        </div>
+      </div>
+    <?php endif; ?>
+
+    <?php if ($breadcrumb): ?>
+      <div id="breadcrumb-wrapper">
+        <div class="container clearfix">
+          <?php print $breadcrumb; ?>
+        </div>
+      </div>
+    <?php endif; ?>
+
+    <?php if ($messages || $page['help']): ?>
+      <div id="messages-help-wrapper">
+        <div class="container clearfix">
+          <?php print $messages; ?>
+          <?php print render($page['help']); ?>
+        </div>
+      </div>
+    <?php endif; ?>
+
+    <?php if ($page['secondary_content']): ?>
+      <div id="secondary-content-wrapper">
+        <div class="container clearfix">
+          <?php print render($page['secondary_content']); ?>
+        </div>
+      </div>
+    <?php endif; ?>
+
+    <div id="content-wrapper"><div class="container">
+      <div id="columns"><div class="columns-inner clearfix">
+        <div id="content-column"><div class="content-inner">
+
           <?php print render($page['highlighted']); ?>
 
           <<?php print $tag; ?> id="main-content">
 
-            <?php print render($title_prefix); // Does nothing by default in D7 core ?>
+            <?php print render($title_prefix); ?>
 
-            <!-- !Main Content Header -->
             <?php if ($title || $primary_local_tasks || $secondary_local_tasks || $action_links = render($action_links)): ?>
               <header<?php print $content_header_attributes; ?>>
+
+                <?php if ($title): ?>
+                  <h1 id="page-title"><?php print $title; ?></h1>
+                <?php endif; ?>
 
                 <?php if ($primary_local_tasks || $secondary_local_tasks || $action_links): ?>
                   <div id="tasks">
@@ -182,69 +224,49 @@
                   </div>
                 <?php endif; ?>
 
-                <?php if ($title): ?>
-                  <h1 id="page-title">
-                    <?php print $title; ?>
-                  </h1>
-                <?php endif; ?>
-
               </header>
             <?php endif; ?>
 
-
-
-            <!-- !Main Content -->
-
-            <?php if(drupal_is_front_page()){
-                unset($page['content']['system_main']['default_message']);
-              } 
-            ?>
-
             <?php if ($content = render($page['content'])): ?>
-              <div id="content" class="region">
+              <div id="content">
                 <?php print $content; ?>
               </div>
             <?php endif; ?>
 
-
-            <!-- !Feed Icons -->
             <?php print $feed_icons; ?>
 
             <?php print render($title_suffix); // Prints page level contextual links ?>
 
-          </<?php print $tag; ?>><!-- /end #main-content -->
+          </<?php print $tag; ?>>
 
-          <!-- !Content Aside Region-->
           <?php print render($page['content_aside']); ?>
 
-        </div><!-- /end .content-inner -->
-      </main><!-- /end #content-column -->
+        </div></div>
 
-      <!-- !Sidebar Regions -->
-      <?php $sidebar_first = render($page['sidebar_first']); print $sidebar_first; ?>
-      <?php $sidebar_second = render($page['sidebar_second']); print $sidebar_second; ?>
+        <?php print render($page['sidebar_first']); ?>
+        <?php print render($page['sidebar_second']); ?>
 
-    </div><!-- /end #columns -->
+      </div></div>
+    </div></div>
 
-    <!-- !Tertiary Content Region -->
-    <?php print render($page['tertiary_content']); ?>
-
-    <!-- !Footer -->
-    <?php if ($page['footer'] || $attribution): ?>
-      <footer<?php print $footer_attributes; ?>>
-        <?php print render($page['footer']); ?>
-        <?php print $attribution; ?>
-      </footer>
-    <?php endif; ?>
-
-    <div id="block-block-4" class="block block-block contextual-links-region no-title footer-adci copyright">
-      <div class="block-inner clearfix">    
-        <div class="block-content content">
-          <span class="footer-line">Corporate Drupal Theme © 2015</span>
-          <span id="footer-dash"></span>
-          <span class="footer-line"><a href="http://adcisolutions.com/" title="drupal development">ADCI solutions</a></span>
+    <?php if ($page['tertiary_content']): ?>
+      <div id="tertiary-content-wrapper">
+        <div class="container clearfix">
+          <?php print render($page['tertiary_content']); ?>
         </div>
       </div>
-    </div>
+    <?php endif; ?>
+
+    <?php if ($page['footer'] || $attribution): ?>
+      <div id="footer-wrapper">
+        <div class="container clearfix">
+          <footer<?php print $footer_attributes; ?>>
+            <?php print render($page['footer']); ?>
+            <?php print $attribution; ?>
+          </footer>
+        </div>
+      </div>
+    <?php endif; ?>
+
   </div>
 </div>

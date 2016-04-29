@@ -74,6 +74,7 @@
   ; ie_scripts[lte IE 8][] = scripts/my-script.js
   scripts[] = scripts/resize.js
   scripts[] = scripts/append.js
+  scripts[] = scripts/mobius.js
 
 ;----------// Regions
 

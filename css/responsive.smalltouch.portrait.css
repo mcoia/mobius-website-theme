@@ -15,7 +15,7 @@ body {
 }
 
 h2 {
-  font-size: 22px;
+  //font-size: 22px;
 }
 
 /* =============================================================================
@@ -452,7 +452,9 @@ input[type=text], input[type=password] {
 body #page #block-system-main-menu a,
 body #page a, 
 body #page .content ul li  {
-  font-size: 16px;
+//  font-size: 16px;
+    line-height: 1.2em;
+    font-size: 1.1em;
 }
 
 body #page p {

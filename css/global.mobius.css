@@ -4,26 +4,29 @@
 body { 
   overflow: auto;
 }
-
+div {
+  font-size: 1em;
+}
 p, .event-date {
-font-size: 1.1em;
+font-size: 1.1rem;
 }
 
 h1, #page-title {
-  font-size: 3em;
+  font-size: 2.6em;
   color: #00457C;
-  margin-bottom: .9em
+  margin-bottom: .75em
 }
 
 body h2 {
   font-size: 2em;
   color: #00A1B1;
+  line-height: 1.1em;
 }
 h3 { 
-  font-size: 1.8em;
+  font-size: 1.4em;
   line-height: 1.1em;
-  padding-left: .5em;
-  border-left: 3px solid #c357b7;
+  /*padding-left: .5em;
+  border-left: 3px solid #c357b7;*/
   margin-bottom: 0;
   font-weight: normal;
   color: #046DC1;
@@ -36,9 +39,14 @@ h3 {
   line-height: .9em;
 }
 
-#content a {
+.content-inner a {
   color: #046DC1;
   text-decoration: underline;
+}
+.views-field-view-node a {
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 1em;
 }
 
 
@@ -225,7 +233,7 @@ div.info {
 }
 div#skittles { 
   text-align: center; 
-  font-size: 1.2em;
+  font-size: 1.2rem;
   font-weight: 400;
   font-family: 'Oswald', sans-serif;
 }
@@ -274,7 +282,7 @@ h2.block-title, h2.pane-title, h2 {
     border-left: .5em solid #f79802;
     border-bottom: .5em solid transparent;
     border-right: .5em solid transparent;
-    font-size: 1.3em;
+    font-size: 1.3rem;
     padding: .2em 0;
     text-align: center;
     margin-top: 1.5em;
@@ -286,15 +294,17 @@ div.info {
 div.info span.fa-info-circle {
   padding: 1em;
 }
-h2.field-label {
-  font-size: 1.2em;
-  display:inline;
-  font-weight: normal;
+.field h2.field-label {
+  font-size: 1.5rem;
   background: none;
   border: none;
+  margin: .65em 0 .5em 0;
+  margin-left: 0;
+  padding: 0;
 }
+
 .field-item {
-  font-size: 1.1em;
+  font-size: 1.1rem;
 }
 h3.news-title a {
   text-decoration: none !important;
@@ -330,4 +340,89 @@ section.panel-pane {
     border: none;
     padding: 1em;
     border-radius: 2em;
+}
+#library-info ul li:before {
+  content: none;
+}
+
+div.view-header p:first-child {
+margin-top: 0;
+}
+
+form { 
+  margin-bottom: 1em;
+}
+
+.page-labelmaker .messages {
+ margin-left: 0;
+}
+
+html.js .responsive-menus div.contextual-links-wrapper {
+  display: none;
+}
+
+.responsive-menus.responsified.responsive-toggled.absolute .responsive-menus-simple {
+right: 0;
+width: auto;
+z-index: 999;
+}
+
+.tb-megamenu .tb-megamenu-button {
+  width: 100%;
+  height: 48px;
+  background: none;
+  border: none;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.1em;
+}
+.tb-megamenu-button i::after {
+  content: " Main Menu";
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: semi-bold;
+}
+@media (max-width: 979px) {
+.tb-megamenu .btn-navbar {
+    margin-bottom: 0px;
+    width: 100%;
+  }
+#logo img {
+  width: 150px;
+  }
+.tb-megamenu .mega-nav .mega-group > .mega-group-title, .tb-megamenu .dropdown-menu .mega-nav .mega-group > .mega-group-title, .tb-megamenu .dropdown-menu .active .mega-nav .mega-group > .mega-group-title, .tb-megamenu .mega-nav .mega-group > .mega-group-title:hover, .tb-megamenu .dropdown-menu .mega-nav .mega-group > .mega-group-title:hover {
+  color: #ccc;
+  }
+.tb-megamenu .tb-megamenu-subnav .mega-group * {
+  background-color: black;
+  }
+.tb-megamenu .nav-collapse {
+  margin-top: 20px;
+  }
+}
+.tb-megamenu .btn-navbar:hover {
+  background: none;
+}
+.responsive-menus.responsified span.toggler {
+  background: #1973BB;
+  border-radius: 0;
+  box-shadow: 0 0 1em #C55FBA;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  padding: .5em;
+}
+.meeting-view-table .file-wrapper {
+  display: none;
+}
+.meeting-view-table .file-wrapper {
+}
+.meeting-view-table .file-wrapper::before {
+  margin-left: .5em;
+  content: "\00BB\0020";
+}
+
+td.views-field-title,  td.views-field-field-meeting-date {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #046DC1;
 }
