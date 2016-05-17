@@ -46,17 +46,12 @@ h2 {
 }
 
 header#header .region-header {
-  display: none;
+//  display: none;
 }
 
 #header {
   border-top: 4px solid #0daed1;
-  background: #262626;
-  background: -webkit-linear-gradient(90deg, #262626 0%, #303030 100%);
-  background: -moz-linear-gradient(90deg, #262626 0%, #303030 100%);
-  background: -o-linear-gradient(90deg, #262626 0%, #303030 100%);
-  background: -ms-linear-gradient(90deg, #262626 0%, #303030 100%);
-  background: linear-gradient(0deg, #262626 0%, #303030 100%);
+  border-bottom: 4px solid #0daed1;
 }
 
 #branding {

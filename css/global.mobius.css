@@ -215,56 +215,36 @@ div.info {
   background-color: yellow;
 } 
 
-.front #header {
-  margin:0;
-  width:1000px;
-  margin-left: -15px;
-  background: rgba(224,217,224,1);
-  background: -moz-radial-gradient(center, ellipse cover, rgba(224,217,224,1) 0%, rgba(184,182,184,1) 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(224,217,224,1)), color-stop(100%, rgba(184,182,184,1)));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(224,217,224,1) 0%, rgba(184,182,184,1) 100%);
-  background: -o-radial-gradient(center, ellipse cover, rgba(224,217,224,1) 0%, rgba(184,182,184,1) 100%);
-  background: -ms-radial-gradient(center, ellipse cover, rgba(224,217,224,1) 0%, rgba(184,182,184,1) 100%);
-  background: radial-gradient(ellipse at center, rgba(224,217,224,1) 0%, rgba(184,182,184,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0d9e0', endColorstr='#b8b6b8', GradientType=1 );
-}
 #header {
-  margin:0;
+  margin:0 0 10px 0;
+  border-top: 4px solid #0daed1;
+  border-bottom: 4px solid #0daed1; 
 }
-.front #header .block .block-inner {
-  padding: 0;
+#header .flexslider {
+  margin: 0;
+    -webkit-border-radius: 0px; 
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: none;
 }
-.front #header h1 {
+#header .flex-caption {
+  font-size: calc(0.5em + 1vw);
+  line-height: calc(1em + 1vw);
+  padding: .5em;
   color: #fff;
-  font-family: 'Lora', serif;
-  text-shadow: 3px 3px 2px #666;
+  text-shadow: 2px 2px 4px #333;
+  position: absolute;
+  bottom: 0;
+  background: rgba(99,99,99,0.69);
+  width: 100%;
 }
-div#skittles { 
-  text-align: center; 
-  font-size: 1.2rem;
-  font-weight: 400;
-  font-family: 'Oswald', sans-serif;
+#header .block-inner { 
+  margin: 0;
 }
-#skittles div {
-  padding: 0;
-  border-bottom: 10px solid transparent;  /* left arrow slant */
-  border-top: 10px solid transparent; /* right arrow slant */
-  border-left: 10px solid #2f2f2f; /* bottom, add background color here */
-}
-#header .first {
-  background-color: #8EB950;
-}
-#header .second {
-  background-color: #f79802;
-}
-#header .third {
-  background-color: #C55FBA;
-}
-#header .fourth {
-  background-color: #C74141;
-}
-#menu-bar, .tb-megamenu-main-menu {
-  //width: 950px;
+
+#block-tb-megamenu-main-menu {
+ margin-left: 0;
+ margin-right: 0;
 }
 h2.block-title, h2.pane-title, h2 {
   background: #eee;
@@ -414,7 +394,7 @@ z-index: 999;
 .responsive-menus.responsified span.toggler {
   background: #1973BB;
   border-radius: 0;
-  box-shadow: 0 0 1em #C55FBA;
+  box-shadow: 0 0 1em #0daed1;
   font-family: 'Roboto', sans-serif;
   font-size: 1.1rem;
   padding: .5em;

@@ -50,7 +50,7 @@ h2 {
 }
 
 header {
-  display: none;
+  //display: none;
 }
 
 #menu-bar {
@@ -179,7 +179,7 @@ header {
 }
 
 header#header .region-header {
-  display: none;
+  //display: none;
 }
 
 #block-views-recent-portfolio-items-block .views-field-field-image img,
