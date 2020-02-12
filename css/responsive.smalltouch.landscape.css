@@ -202,3 +202,16 @@ input[type=text], input[type=password]  {
   margin: 1%;
   width: 48%;
 }
+#block-search-form .form-type-textfield input {
+  height: 30px;
+  border: none;
+  background: #ecf3f4;
+  padding-left: 10px;
+  padding-right: 40px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  width:100%
+}
+#search-block-form .container-inline,  #edit-search-block-form--2 {
+  width:100%;
+}

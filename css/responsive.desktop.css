@@ -82,7 +82,7 @@ header {
 }
 
 header .region-header {
-  float: right;
+  float: none;
 }
 
 #branding {
@@ -98,10 +98,8 @@ header .region-header {
 }
 
 #block-search-form {
-  clear: both;
   float: right;
-  margin: 0;
-  margin-top: 20px;
+  margin-top: -36px;
 }
 
 .logged-in #phone-icon {

@@ -136,11 +136,9 @@ hide($content['links']);
     <div class="container" id="library-info">
     <h2>Library Info</h2>
     <ul>
-      
       <li><b>Member Type</b>: <?php print $content['field_member_type'][0]['#markup']; ?></li>
       <li><b>Library Type: </b><?php print $content['field_library_type'][0]['#markup']; ?></li>
       <li><b>Cluster: </b><?php print $content['field_cluster'][0]['#markup']; ?></li>
-      <li><?php print $content['field_info_place'][0]['#markup']; ?></li>
     </ul>
     </div>
     <div class="container" id="library-contacts">

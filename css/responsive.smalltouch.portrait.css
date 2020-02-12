@@ -49,10 +49,6 @@ header#header .region-header {
 //  display: none;
 }
 
-#header {
-  border-top: 4px solid #0daed1;
-  border-bottom: 4px solid #0daed1;
-}
 
 #branding {
   margin: 5px 10px;
@@ -573,4 +569,21 @@ body #page .view-portfolio-categories .views-row a {
 
 .contact .iframe-wrapper iframe {
   height: 300px;
+}
+#logo {
+    padding-bottom: 1em;
+    /* margin-left: 1em; */
+    margin-top: .em;
+    /* height: auto; */
+    display: block;
+    margin-bottom: 30px;
+    width:150px;
+}
+#block-search-form {
+    float: right;
+    margin-top: -36px;
+    widtH: 100%;
+}
+#block-search-form .container-inline, #edit-search-block-form--2 {
+  width:100% !important;
 }

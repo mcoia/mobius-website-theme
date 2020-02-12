@@ -228,4 +228,8 @@
   #columns {
     margin: 0;
   }
+  /* TB Mega Menu */
+  a.mega-group-title {
+    color:white !important;
+  }
 }

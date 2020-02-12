@@ -16,7 +16,6 @@
   stylesheets[screen][] = css/global.base.css
   stylesheets[screen][] = css/global.styles.css
   stylesheets[screen][] = css/global.mobius.css
-  stylesheets[screen][] = css/responsive-tables.css
 
   ; Print - uncomment to load basic print styles.
   stylesheets[print][] = css/print.css
@@ -76,7 +75,6 @@
   scripts[] = scripts/resize.js
   scripts[] = scripts/append.js
   scripts[] = scripts/mobius.js
-  scripts[] = scripts/responsive-tables.js
 
 ;----------// Regions
 

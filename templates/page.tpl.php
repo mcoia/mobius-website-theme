@@ -237,14 +237,5 @@
       </footer>
     <?php endif; ?>
 
-    <div id="block-block-4" class="block block-block contextual-links-region no-title footer-adci copyright">
-      <div class="block-inner clearfix">    
-        <div class="block-content content">
-          <span class="footer-line">Corporate Drupal Theme © 2015</span>
-          <span id="footer-dash"></span>
-          <span class="footer-line"><a href="http://adcisolutions.com/" title="drupal development">ADCI solutions</a></span>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
