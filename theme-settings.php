@@ -1,16 +1,49 @@
 <?php
-
 /**
  * @file
- * Implimentation of hook_form_system_theme_settings_alter()
- *
- * To use replace "adaptivetheme_subtheme" with your themeName and uncomment by
- * deleting the comment line to enable.
- *
- * @param $form: Nested array of form elements that comprise the form.
- * @param $form_state: A keyed array containing the current state of the form.
+ * Theme settings.
  */
+
 /**
-function adaptivetheme_subtheme_form_system_theme_settings_alter(&$form, &$form_state)  {
-    // Sauce goes here
-}*/
+ * Implementation of hook_form_system_theme_settings_alter()
+ *
+ * @param $form
+ *   Nested array of form elements that comprise the form.
+ * @param $form_state
+ *   A keyed array containing the current state of the form.
+ */
+
+/* -- Delete this line to enable.
+function mobius_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id = NULL) {
+// Work-around for a core bug affecting admin themes. See issue #943212.
+if (isset($form_id)) {
+return;
+}
+
+// $build_info = $form_state->getBuildInfo();
+// $theme = $build_info['args'][0];
+
+// $form['#validate'][] = 'mobius_settings_form_validate';
+// $form['#submit'][] = 'mobius_settings_form_submit';
+}
+// */
+
+
+/**
+ * Form validation handler for the theme settings form.
+ */
+/* -- Delete this line to enable.
+function mobius_settings_form_validate($form, &$form_state) {
+
+}
+// */
+
+
+/**
+ * Form submit handler for the theme settings form.
+ */
+/* -- Delete this line to enable.
+function mobius_settings_form_submit($form, &$form_state) {
+
+}
+// */

@@ -1,0 +1,71 @@
+= Drupal v7->v9 MobiusConsortium.org
+
+=== Let's start with a clean slate.
+
+---
+
+.Structure > Block Layout
+Disable every block, then move it to the ‘Disabled’ block.
+Don't delete them, This has adverse effects for some reason.
+
+image::{docdir}/{docdir}/README/img/Instructions_html_40a3498cabd0d571.png[align="center"]
+
+=== Add Logo
+---
+
+.Structure > Block Layout > Custom block library
+
+Click: Add custom block
+
+Block decription: Mobius Logo Body:
+<div id="logo"> <img class="img img-responsive" src="sites/default/files/site/MOBIUS-LINKING-HEADER-LOGO.png"> </div>
+
+Text format: Source Code
+
+image::{docdir}/README/img/Screenshot_20220617_191434.png[align="center"]
+
+Now add the block to 'Header first' region.
+
+Must go above Front Page Quote
+
+=== Top Links
+
+---
+
+.Structure > Block Layout
+Now click place block on Leaderboard and scroll down to ‘Top Links’ make sure to put this above the ‘Front Page Quote’
+
+image::{docdir}/README/img/image-2022-06-16-16-52-24-383.png[align="center"]
+
+=== Front Page Quote
+
+---
+
+Now place the “Front Page Quote” block In header 1. Don’t forget to scroll down and save!
+
+We need to edit this block and add a class name ‘front-page-quote’ to the div tag.
+Remove all the inline styles.
+(Styles go in stylesheets)
+
+image::{docdir}/README/img/Instructions_html_7b1708c8f1ba8637.png[align="center"]
+
+=== Main Menu
+
+---
+
+.Structure > Block Layout
+Scroll down to Navbar and click ‘Place Block’ Filter by ‘Menu’ and select ‘Main menu’ w/Category ‘TB Mega menu’
+
+image::{docdir}/README/img/image-2022-06-16-16-47-20-251.png[align="center"]
+
+Now we’ll remove the ‘HOME’ entry on the main menu.
+
+.Structure > Menus > ‘Main Menu’ Edit menu
+Now click the checkbox to disable.
+Don’t forget to click Save!
+
+image::{docdir}/README/img/image-2022-06-16-16-47-56-494.png[align="center"]
+
+image::{docdir}/README/img/image-2022-06-16-16-48-24-302.png[align="center"]
+
+

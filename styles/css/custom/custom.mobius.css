@@ -1,0 +1,103 @@
+/*
+    our nasty grey color: ==> #757575
+    font-family: "Open Sans", sans-serif;
+    font-size: 18.6667px;
+    font-weight: 700
+
+  */
+
+html, body {
+  font-family: "Open Sans", sans-serif;
+  background-color: red;
+}
+
+.page {
+
+  background-color: #fff;
+}
+
+#leaderboard > div {
+  background-color: #fff;
+  color: #75869b;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16pt;
+  text-decoration: none;
+}
+
+#leaderboard, .menu .menu__link {
+  color: #75869b;
+}
+
+#leaderboard, .menu .menu__link:hover {
+  color: inherit;
+}
+
+#leaderboard .menu-name--menu-top-links a::before {
+  content: "|";
+  font-size: 16pt;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+#leaderboard .menu-name--menu-top-links li:first-child a::before {
+  content: "";
+}
+
+.pr-header {
+  background-color: #fff;
+}
+
+.pr-navbar {
+  background-color: #0099a8;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+.ms-dropmenu .rm-block__content .menu-level-1 > li > span > .menu__link, .ms-horizontal .rm-block__content .menu-level-1 > li > span > .menu__link {
+  font-size: 18.6666px;
+  font-weight: 700;
+}
+
+.ms-dropmenu .rm-block__content .menu-level-1 > li > span > .menu__link, .ms-horizontal .rm-block__content .menu-level-1 > li {
+  padding: 15px 20px;
+}
+
+.ms-dropmenu .rm-block__content .menu-level-2 .menu__link, .ms-horizontal .rm-block__content .menu-level-2 .menu__link {
+  background-color: #fff;
+  color: #333;
+}
+
+.menu__link--wrapper .is-parent__wrapper .menu__link {
+  border: none;
+  font-size: 14pt;
+  padding: 15px 20px;
+}
+
+
+.ms-dropmenu .rm-block__content .menu-level-1 > li > span > .menu__link:hover, .ms-dropmenu .rm-block__content .menu-level-1 > li > span > .menu__link:focus, .ms-horizontal .rm-block__content .menu-level-1 > li > span > .menu__link:hover, .ms-horizontal .rm-block__content .menu-level-1 > li > span > .menu__link:focus {
+  color: #e54e4b;
+  background-color: #fff;
+}
+
+.ms-dropmenu .rm-block__content .menu-level-2 .menu__link, .ms-horizontal .rm-block__content .menu-level-2 .menu__link {
+  color: #333;
+  background-color: #fff;
+}
+
+.tb-megamenu .nav > li > a, .tb-megamenu .nav > li > span.tb-megamenu-no-link {
+  border: 0px;
+  margin-bottom: -4px;
+}
+
+.tb-megamenu .dropdown-menu {
+  border-bottom: 0px;
+
+}
+
+.tb-megamenu .dropdown-menu .active > a, .tb-megamenu .dropdown-menu .active > a:hover, .tb-megamenu .dropdown-menu .active > span.tb-megamenu-no-link, .tb-megamenu .dropdown-menu .active > span.tb-megamenu-no-link:hover {
+  background-image: none;
+  background-color: #fff;
+  color: #e54e4b;
+}
