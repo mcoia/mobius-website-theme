@@ -26,38 +26,39 @@
   'field-type-' ~ field_type|clean_class,
   'field-label-' ~ label_display,
 ] %}
-<div class="flexbox justify-content-evenly" {{ attributes.addClass(classes) }}>
-  {%- for item in items -%}
+<div id="library-contact-page" class="container" {{ attributes.addClass(classes) }}>
+  <div class="row">
 
-    <div class="library-contacts">
+    {%- for item in items -%}
 
-      <h4 class="contact-name">{{ item.content['#paragraph'].field_contact_name.value }}</h4>
-      <p class="contact-title">{{ item.content['#paragraph'].field_title.value }}</p>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 
-      <ul>
+        <h4 class="contact-name">{{ item.content['#paragraph'].field_contact_name.value }}</h4>
+        <p class="contact-title">{{ item.content['#paragraph'].field_title.value }}</p>
 
-        <li>
-          <span>Email:</span>
-          <a
-            href="mailto:{{ item.content['#paragraph'].field_email.value }}">{{ item.content['#paragraph'].field_email.value }}</a>
-        </li>
+        <ul>
 
-        <li>
-          <span>Phone:</span>
-          {{ item.content['#paragraph'].field_phone.value }}
-        </li>
+          <li>
+            <span>Email:</span>
+            <a
+              href="mailto:{{ item.content['#paragraph'].field_email.value }}">{{ item.content['#paragraph'].field_email.value }}</a>
+          </li>
 
-        <li>
-          <span>Contact Type:</span>
-          {{ item.content['#paragraph'].field_contact_type.value }}
-        </li>
+          <li>
+            <span>Phone:</span>
+            {{ item.content['#paragraph'].field_phone.value }}
+          </li>
 
-      </ul>
+          <li>
+            <span>Contact Type:</span>
+            {{ item.content['#paragraph'].field_contact_type.value }}
+          </li>
 
-    </div>
+        </ul>
 
-    {# original twig output   #}
-    {#        {{ item.content }} #}
+      </div>
 
-  {%- endfor -%}
+    {%- endfor -%}
+
+  </div>
 </div>
