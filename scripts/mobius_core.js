@@ -45,7 +45,7 @@ class LandingPage {
 
     });
 
-    jQuery('#front-page-grid-blocks').css("display", "flex");
+    jQuery('#front-page-grid-blocks').css('display', 'flex');
     jQuery('#front-page-grid-blocks').html(blockHTML);
 
   }
