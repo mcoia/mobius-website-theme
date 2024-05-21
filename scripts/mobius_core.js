@@ -1,81 +1,81 @@
 class LandingPage {
 
-  constructor() {
+    constructor() {
 
-    this.hidePageTitle();
-    this.setLandingPageTitle();
-    this.printWelcomeMessage();
-    this.positionGridBlocks();
-    this.addMobiusTitleToMainMap();
-    this.positionGoogleMaps();
-    this.removePageCouldNotBeFound();
+        this.hidePageTitle();
+        this.setLandingPageTitle();
+        this.printWelcomeMessage();
+        this.positionGridBlocks();
+        this.addMobiusTitleToMainMap();
+        this.positionGoogleMaps();
+        this.removePageCouldNotBeFound();
 
-  }
+    }
 
-  hidePageTitle() {
-    jQuery('h1.view-title').hide();
-  }
+    hidePageTitle() {
+        jQuery('h1.view-title').hide();
+    }
 
-  setLandingPageTitle() {
-    jQuery(document).prop('title', 'MOBIUS Consortium - Linking Libraries | Value and diversity through resource sharing and collaborative collection development.');
-  }
+    setLandingPageTitle() {
+        jQuery(document).prop('title', 'MOBIUS Consortium - Linking Libraries | Value and diversity through resource sharing and collaborative collection development.');
+    }
 
-  printWelcomeMessage() {
-    console.clear();
-    console.log(`Welcome to mobiusconsortium.org -- ${new Date().toLocaleTimeString()}`);
-  }
+    printWelcomeMessage() {
+        console.clear();
+        console.log(`Welcome to mobiusconsortium.org -- ${new Date().toLocaleTimeString()}`);
+    }
 
-  positionGridBlocks() {
+    positionGridBlocks() {
 
-    let blockHTML = '';
-    jQuery('#front-page-grid-blocks .grid-block-item').each(function () {
+        let blockHTML = '';
+        jQuery('#front-page-grid-blocks .grid-block-item').each(function () {
 
-      let heading = jQuery(this).find('.views-field-field-front-page-heading').text();
-      let subheading = jQuery(this).find('.views-field-field-front-page-subheading').text();
-      let img = jQuery(this).find('img').attr('src');
-      let link = jQuery(this).find('a').attr('href');
+            let heading = jQuery(this).find('.views-field-field-front-page-heading').text();
+            let subheading = jQuery(this).find('.views-field-field-front-page-subheading').text();
+            let img = jQuery(this).find('img').attr('src');
+            let link = jQuery(this).find('a').attr('href');
 
-      blockHTML += '<div class = "front-grid-flex-item" style="background-image: url(' + img + ');" >\n';
-      blockHTML += '<a class = "front-grid-flex-item-a" href=\'' + link + '\' >\n';
-      blockHTML += '<div class = "front-grid-flex-heading" >' + heading + '</div>\n';
-      blockHTML += '<div class = "front-grid-flex-subheading" >' + subheading + '</div>\n';
+            blockHTML += '<div class = "front-grid-flex-item" style="background-image: url(' + img + ');" >\n';
+            blockHTML += '<a class = "front-grid-flex-item-a" href=\'' + link + '\' >\n';
+            blockHTML += '<div class = "front-grid-flex-heading" >' + heading + '</div>\n';
+            blockHTML += '<div class = "front-grid-flex-subheading" >' + subheading + '</div>\n';
 
-      blockHTML += '</a></div>';
-      blockHTML += '</div>';
+            blockHTML += '</a></div>';
+            blockHTML += '</div>';
 
-    });
+        });
 
-    jQuery('#front-page-grid-blocks').css('display', 'flex');
-    jQuery('#front-page-grid-blocks').html(blockHTML);
+        jQuery('#front-page-grid-blocks').css('display', 'flex');
+        jQuery('#front-page-grid-blocks').html(blockHTML);
 
-  }
+    }
 
-  addMobiusTitleToMainMap() {
-    jQuery('#block-views-block-branch-map-central-block-1').before('<h2 class="block-title map-title">MOBIUS MEMBER LOCATIONS</h2>');
-  }
+    addMobiusTitleToMainMap() {
+        jQuery('#block-views-block-branch-map-central-block-1').before('<h2 class="block-title map-title">MOBIUS MEMBER LOCATIONS</h2>');
+    }
 
-  positionGoogleMaps() {
-    // wrap the maps in a div called 'map-container' which is a flexbox
-    // container
-    jQuery('#block-views-block-branch-map-west-block-1,#block-views-block-branch-map-non-us-block-1').wrapAll('<div class="map-container">');
-  }
+    positionGoogleMaps() {
+        // wrap the maps in a div called 'map-container' which is a flexbox
+        // container
+        jQuery('#block-views-block-branch-map-west-block-1,#block-views-block-branch-map-non-us-block-1').wrapAll('<div class="map-container">');
+    }
 
-  removePageCouldNotBeFound() {
-    // jQuery('#block-mainpagecontent').replaceAll('The requested page could
-    // not be found.', '');
-    jQuery('#block-mainpagecontent').text(function () {
-      return jQuery(this).text().replace('The requested page could not be found.', '');
-    });
-  }
+    removePageCouldNotBeFound() {
+        // jQuery('#block-mainpagecontent').replaceAll('The requested page could
+        // not be found.', '');
+        jQuery('#block-mainpagecontent').text(function () {
+            return jQuery(this).text().replace('The requested page could not be found.', '');
+        });
+    }
 
 }
 
 // ~/branch-list
 class BranchListPage {
 
-  setTableStriped() {
-    jQuery('table').addClass('table-striped');
-  }
+    setTableStriped() {
+        jQuery('table').addClass('table-striped');
+    }
 
 }
 
@@ -83,62 +83,62 @@ class BranchListPage {
 class DigitizationPageSliders {
 
 
-  /*
-   slider library used: https://github.com/kenwheeler/slick
+    /*
+     slider library used: https://github.com/kenwheeler/slick
 
-   css classes:
-   #digitization-container - wrapper for everything
-   .library-sliders - wrapper for all our sliders
+     css classes:
+     #digitization-container - wrapper for everything
+     .library-sliders - wrapper for all our sliders
 
-   // library classes
-   #library-x - individual library id. x = number
-   .library-container - all libraries
-   .library-title - title
+     // library classes
+     #library-x - individual library id. x = number
+     .library-container - all libraries
+     .library-title - title
 
-  */
+    */
 
-  containerID = '#digitization-container';
+    containerID = '#digitization-container';
 
-  constructor() {
-    this.build();
-  }
+    constructor() {
+        this.build();
+    }
 
-  build() {
+    build() {
 
-    let json = this.getJSON();
-    let html = this.buildHTML(json);
+        let json = this.getJSON();
+        let html = this.buildHTML(json);
 
-    this.injectHTML(html);
-    this.initSliders(json.length);
+        this.injectHTML(html);
+        this.initSliders(json.length);
 
-  }
+    }
 
-  getJSON() {
+    getJSON() {
 
-    let json;
+        let json;
 
-    jQuery.ajax({
-      url: "/api/digitization",
-      method: "GET",
-      async: false,
-      headers: {
-        "Content-Type": "application/json"
-      },
-      success: function (data, status, xhr) {
-        json = data;
-      }
-    })
+        jQuery.ajax({
+            url: "/api/digitization",
+            method: "GET",
+            async: false,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            success: function (data, status, xhr) {
+                json = data;
+            }
+        })
 
-    return json;
-  }
+        return json;
+    }
 
-  buildHTML(json) {
+    buildHTML(json) {
 
-    let html = '<div id="library-sliders">';
+        let html = '<div id="library-sliders">';
 
-    for (let i = 0; i < json.length; i++) {
+        for (let i = 0; i < json.length; i++) {
 
-      html += `<div id='library-${i}' class="library-container">
+            html += `<div id='library-${i}' class="library-container">
 
                   <h2 class="library-title">
                     <a class="underline" href="${json[i].field_library_vital_link}" target="_blank">${json[i].title}</a>
@@ -150,118 +150,285 @@ class DigitizationPageSliders {
 
               </div>`;
 
+        }
+
+        html += '</div>';
+
+        return html;
     }
 
-    html += '</div>';
+    buildSliderImages(json) {
 
-    return html;
-  }
+        // convert our json comma spaced string into an array for relative paths
+        let imagesRelativePaths = json.field_digitization_library_image.split(',');
 
-  buildSliderImages(json) {
+        let html = '';
 
-    // convert our json comma spaced string into an array for relative paths
-    let imagesRelativePaths = json.field_digitization_library_image.split(',');
+        for (const img of imagesRelativePaths) {
+            html += `<img class='library-slider-img' src='${img}' alt=""/>`
+        }
 
-    let html = '';
-
-    for (const img of imagesRelativePaths) {
-      html += `<img class='library-slider-img' src='${img}' alt=""/>`
+        return html;
     }
 
-    return html;
-  }
-
-  injectHTML(html) {
-    jQuery(this.containerID).append(html);
-  }
-
-  initSliders(length) {
-    // https://github.com/kenwheeler/slick
-
-    // autoplay in ms
-    let autoPlayMax = 3000;
-    let autoPlayMin = 1000;
-
-    for (let i = 0; i < length; i++) {
-
-      jQuery(`#library-${i}-slider`).slick({
-        autoplay: true,
-        autoplaySpeed: Math.floor(Math.random() * (autoPlayMax - autoPlayMin + 1) + autoPlayMin),
-        dots: true,
-        arrows: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        draggable: false,
-        infinite: true,
-        variableWidth: true,
-        centerMode: true,
-        lazyLoad: 'progressive'
-      });
-
+    injectHTML(html) {
+        jQuery(this.containerID).append(html);
     }
 
-  }
+    initSliders(length) {
+        // https://github.com/kenwheeler/slick
+
+        // autoplay in ms
+        let autoPlayMax = 3000;
+        let autoPlayMin = 1000;
+
+        for (let i = 0; i < length; i++) {
+
+            jQuery(`#library-${i}-slider`).slick({
+                autoplay: true,
+                autoplaySpeed: Math.floor(Math.random() * (autoPlayMax - autoPlayMin + 1) + autoPlayMin),
+                dots: true,
+                arrows: false,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                draggable: false,
+                infinite: true,
+                variableWidth: true,
+                centerMode: true,
+                lazyLoad: 'progressive'
+            });
+
+        }
+
+    }
 
 }
 
 // Scan page for tables exceeding n count rows & convert to data table
 class DataTablesCheck {
 
-  scan(force) {
+    scan(force) {
 
-    // force the use of datatables
-    if (force == undefined) {
-      force = false;
-    }
+        // force the use of datatables
+        if (force == undefined) {
+            force = false;
+        }
 
-    // max number of rows before we convert to datatable
-    let maxRows = 30;
+        // max number of rows before we convert to datatable
+        let maxRows = 30;
 
-    // // Just in case we have more than 1 table on the page we'll just each()
-    jQuery('table').each(function () {
+        // // Just in case we have more than 1 table on the page we'll just each()
+        jQuery('table').each(function () {
 
-      // This is the total number of <tr> tags in our table
-      let totalRowCount = jQuery(this).find('tbody>tr').length;
+            // This is the total number of <tr> tags in our table
+            let totalRowCount = jQuery(this).find('tbody>tr').length;
 
-      // set to data table
-      if (totalRowCount > maxRows || force) {
+            // set to data table
+            if (totalRowCount > maxRows || force) {
 
-        console.log('Converting to datatable...');
+                console.log('Converting to datatable...');
 
-        // create datatable
-        jQuery(this).dataTable({
-          paging: true,
-          lengthMenu: [25, 50, 100, 250, 500, 1000]
+                // create datatable
+                jQuery(this).dataTable({
+                    paging: true,
+                    lengthMenu: [25, 50, 100, 250, 500, 1000]
+                });
+
+            }
+
         });
 
-      }
-
-    });
-
-  }
+    }
 
 }
 
+class MemberLibraryPage {
+
+    memberLibraryJsonArray = [];
+
+    constructor() {
+        this.memberLibraryJsonArray = this.getJSON();
+
+        // loop through json array and console log the field_logo
+        for (let i = 0; i < this.memberLibraryJsonArray.length; i++) {
+
+            // check if field_logo is empty and remove from array
+            if (this.memberLibraryJsonArray[i].field_logo == "") {
+                this.memberLibraryJsonArray.splice(i, 1);
+            }
+
+        }
+
+        this.render();
+    }
+
+    getCSS() {
+
+        return `
+        <style>
+        #member-libraries {
+    background-color: whitesmoke;
+}
+
+#member-libraries .card {
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.125), 0 0 0 0 rgba(0, 0, 0, 0.075);
+}
+
+#member-libraries .img-light {
+    filter: brightness(100%);
+}
+
+#member-libraries .img-dark {
+    filter: brightness(50%);
+}
+
+#member-libraries .card-img-top {
+    width: 100%;
+    height: 5vw;
+    object-fit: contain;
+    padding: 5px;
+}
+
+@media only screen and (max-width: 992px) {
+    .card-img-top {
+        height: 22vw;
+    }
+}
+
+#member-libraries .card-text {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#member-libraries .btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#member-libraries .btn {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.5;
+    border-radius: 0;
+    padding: 0.375rem 0.75rem;
+    margin: 0.25rem 0.25rem;
+    transition: all 0.2s ease-in-out;
+}
+
+#member-libraries .btn-outline-secondary {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
+#member-libraries .btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+#member-libraries .library-list-title {
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+        </style>
+        `;
+
+
+    }
+
+    getJSON() {
+
+        let json;
+
+        jQuery.ajax({
+            url: "/api/member-libraries",
+            method: "GET",
+            async: false,
+            headers: {
+                "Content-Type": "application/json"
+            },
+            success: function (data, status, xhr) {
+                json = data;
+            }
+        })
+
+        return json;
+    }
+
+    render() {
+
+        let libraries = this.memberLibraryJsonArray;
+
+        // library card generation
+        let css = this.getCSS();
+        let html = `${css}`;
+        for (let i = 0; i < libraries.length; i++) {
+            html +=
+                `
+                   <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card mb-4 shadow-sm">
+                            <img class="${libraries[i].class} card-img-top" src="${libraries[i].field_logo}" alt="${libraries[i].title} logo">
+                            <div class="card-body">
+                                <p class="card-text">${libraries[i].title}</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <div class="btn-group">
+                                        <a href="${libraries[i].field_ebsco_discovery_service}" target="_blank" class="btn btn-sm btn-outline-secondary">EBSCO Discovery</a>
+                                        <a href="${libraries[i].field_locate_catalog}" target="_blank" class="btn btn-sm btn-outline-secondary">Locate Catalog</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                `
+            ;
+        }
+
+        jQuery("#member-libraries").html(html);
+
+    }
+
+}
+
+
 jQuery(document).ready(() => {
 
-  // Landing Page
-  if (window.location.pathname == '/') {
-    new LandingPage();
-  }
+    // Landing Page
+    if (window.location.pathname == '/') {
+        new LandingPage();
+    }
 
-  if (window.location.pathname == '/branch-list') {
-    new BranchListPage().setTableStriped();
-  }
+    if (window.location.pathname == '/branch-list') {
+        new BranchListPage().setTableStriped();
+    }
 
-  if (window.location.pathname == '/digitization' || window.location.pathname == '/node/1769') {
-    new DigitizationPageSliders();
-  }
+    if (window.location.pathname == '/digitization' || window.location.pathname == '/node/1769') {
+        new DigitizationPageSliders();
+    }
 
-  if (window.location.pathname == '/google-analytics-reports' || window.location.pathname == '/node/281') {
-    // new DataTablesCheck().scan(true);
-  }
+    if (window.location.pathname == '/google-analytics-reports' || window.location.pathname == '/node/281') {
+        // new DataTablesCheck().scan(true);
+    }
 
-  // Scan for data tables and init if needed
-  new DataTablesCheck().scan();
+    if (window.location.pathname == '/member-libraries' || '/firefox/member-libraries.html') {
+        new MemberLibraryPage();
+    }
+
+    console.log(window.location.pathname);
+
+    // Scan for data tables and init if needed
+    new DataTablesCheck().scan();
 
 });
