@@ -247,105 +247,11 @@ class MemberLibraryPage {
     memberLibraryJsonArray = [];
 
     constructor() {
+
         this.memberLibraryJsonArray = this.getJSON();
-
-        // loop through json array and console log the field_logo
-        for (let i = 0; i < this.memberLibraryJsonArray.length; i++) {
-
-            // check if field_logo is empty and remove from array
-            if (this.memberLibraryJsonArray[i].field_logo == "") {
-                this.memberLibraryJsonArray.splice(i, 1);
-            }
-
-        }
-
+        this.removeStandaloneLibraries();
+        this.checkImageNotFound();
         this.render();
-    }
-
-    getCSS() {
-
-        return `
-        <style>
-        #member-libraries {
-    background-color: whitesmoke;
-}
-
-#member-libraries .card {
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    border-radius: 0;
-    background-color: transparent;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.125), 0 0 0 0 rgba(0, 0, 0, 0.075);
-}
-
-#member-libraries .img-light {
-    filter: brightness(100%);
-}
-
-#member-libraries .img-dark {
-    filter: brightness(50%);
-}
-
-#member-libraries .card-img-top {
-    width: 100%;
-    height: 5vw;
-    object-fit: contain;
-    padding: 5px;
-}
-
-@media only screen and (max-width: 992px) {
-    .card-img-top {
-        height: 22vw;
-    }
-}
-
-#member-libraries .card-text {
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    text-align: center;
-}
-
-#member-libraries .btn-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-#member-libraries .btn {
-    font-size: 0.875rem;
-    font-weight: 400;
-    line-height: 1.5;
-    border-radius: 0;
-    padding: 0.375rem 0.75rem;
-    margin: 0.25rem 0.25rem;
-    transition: all 0.2s ease-in-out;
-}
-
-#member-libraries .btn-outline-secondary {
-    color: #6c757d;
-    border-color: #6c757d;
-}
-
-#member-libraries .btn-outline-secondary:hover {
-    color: #fff;
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
-
-#member-libraries .library-list-title {
-    font-family: 'Helvetica Neue', sans-serif;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 1rem;
-    color: #555;
-}
-
-        </style>
-        `;
-
 
     }
 
@@ -368,13 +274,42 @@ class MemberLibraryPage {
         return json;
     }
 
+    removeStandaloneLibraries() {
+
+        for (let i = 0; i < this.memberLibraryJsonArray.length; i++) {
+            // check if field_logo is empty and remove from array
+            if (this.memberLibraryJsonArray[i].field_member_type == "Standalone") {
+
+                this.memberLibraryJsonArray.splice(i, 1);
+            }
+        }
+
+    }
+
+    checkImageNotFound() {
+
+        let imageNotFoundURL = '/sites/default/files/site/image-not-found.jpg';
+
+        // loop through json array and check if field_logo is empty, if it is assign the url to imageNotFoundURL
+        for (let i = 0; i < this.memberLibraryJsonArray.length; i++) {
+            console.log(this.memberLibraryJsonArray[i].field_logo);
+
+            if (this.memberLibraryJsonArray[i].field_logo == "") {
+                this.memberLibraryJsonArray[i].field_logo = imageNotFoundURL;
+            }
+
+        }
+
+    }
+
+
     render() {
 
         let libraries = this.memberLibraryJsonArray;
 
         // library card generation
-        let css = this.getCSS();
-        let html = `${css}`;
+
+        let html = '';
         for (let i = 0; i < libraries.length; i++) {
             html +=
                 `
@@ -425,8 +360,6 @@ jQuery(document).ready(() => {
     if (window.location.pathname == '/member-libraries' || '/firefox/member-libraries.html') {
         new MemberLibraryPage();
     }
-
-    console.log(window.location.pathname);
 
     // Scan for data tables and init if needed
     new DataTablesCheck().scan();
