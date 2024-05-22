@@ -248,8 +248,7 @@ class MemberLibraryPage {
 
     constructor() {
 
-        // this.memberLibraryJsonArray = this.getJSON();
-        this.memberLibraryJsonArray = this.getTestJSON();
+        this.memberLibraryJsonArray = this.getJSON();
         this.removeStandaloneLibraries();
         this.checkImageNotFound();
         this.render();
