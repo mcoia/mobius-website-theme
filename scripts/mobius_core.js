@@ -249,7 +249,7 @@ class MemberLibraryPage {
     constructor() {
 
         this.memberLibraryJsonArray = this.getJSON();
-        this.removeStandaloneLibraries();
+        // this.removeStandaloneLibraries();
         this.checkImageNotFound();
         this.render();
 
